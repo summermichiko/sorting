@@ -1,8 +1,26 @@
+var bubble = function(array) {
+    if (array.length < 2) {
+        return array;
+    }
+    var done = false;
+    while(!done) { //while it's not false
+        done = true;
+        for(i=0; i < array.length; i++) {
+            if(array[i] > array[i+1]){
+                var temp = arr[i]; //temp = 7
+                arr[i] = arr[i+1]; //7 is now equal to index 1
+                arr[i+1] = temp; //index 1 is now temp
+            }
+        }
+    }
+    return array;
+};
+
 // var bubble = function(array) {
 //     if(array.length < 2) {
 //         return array;
 //     }
-//     for(x=0; x < array.length +1; x++) {
+//     for(x=0; x < array.length; x++) {
 //         if(array[x] > array[x+1]) {
 //             var temp = array[x];
 //             array[x] = array[x+1];
@@ -11,46 +29,6 @@
 //     }
 //     return array;
 // };
-
-var bubble = function(arr){
- if (arr.length < 2) return arr;
- var hasSwapped=true;
- var swaps = 0;
- var comparisons = 0;
- var limbo;
-
- for (var n = 0; n < arr.length * arr.length; n++){
-   for (var i = 0; i < arr.length-1; i++) {
-
-     comparisons++;
-     if (arr[i] > arr[i+1]){
-       // swaps++;
-       hasSwapped=true;
-       limbo = arr[i];
-       arr[i]= arr[i+1];
-       arr[i+1] = limbo;
-     }
-   };
- }
- return arr;
-}
-
-
-// var merge = function(left, right) {
-//         var resultArray = [];
-//         var a = 0;
-//         var b = 0;
-//         while(a < left.length && b < right.length) {
-//         if(left[a] < right[b]) {
-//             resultArray.push(left[a]);
-//             a++;
-//         } else {
-//             resultArray.push(right[b]);
-//             b++;
-//         }
-//     }
-//     return resultArray.concat(left.slice(a)).concat(right.slice(b));
-// }
 
 var merge = function(left, right) { //merge function takes two arrays
  var result = [];
@@ -71,7 +49,7 @@ var merge = function(left, right) { //merge function takes two arrays
    }
  }
  return result;
-};
+}
 
 var mergeSort = function(array) {
     
@@ -87,7 +65,11 @@ var mergeSort = function(array) {
     right = array.slice(middle);
 
     return merge(mergeSort(left), mergeSort(right));
-};
+}
+
+//for loops are equivalent to each other
+//for(var i = 0; i <100; i++) {};
+//for(var i = 0, ii = 100; i < ii; i++) {};
 
 
 

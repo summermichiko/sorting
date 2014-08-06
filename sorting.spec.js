@@ -1,4 +1,4 @@
-describe("bubble Sort", function() {
+describe("bubble sort", function() {
     it("handles an empty array", function() {
         expect(bubble([])).toEqual([]);
     });
